@@ -1,8 +1,7 @@
 apiVersion: v1
-baseDomain: example.com              # your base DNS domain
+baseDomain: example.com
 metadata:
-  name: sno                          # cluster name → api.sno.example.com
-
+  name: sno
 networking:
   networkType: OVNKubernetes
   clusterNetwork:
@@ -11,21 +10,13 @@ networking:
   serviceNetwork:
     - 172.30.0.0/16
   machineNetwork:
-    - cidr: 192.168.1.0/24           # subnet of your SNO node
-
+    - cidr: 192.168.1.0/24
 controlPlane:
   name: master
   replicas: 1
-  hyperthreading: Enabled
-  platform:
-   none: {}
 compute:
   - name: worker
     replicas: 0
-
 platform:
-  none: {}                           # baremetal UPI; use baremetal: {} for IPI/BMC
-
-pullSecret: '{"auths":{"fake":{"auth":"Zm9vOmJhcgo="}}}'   # OKD uses fake pull secret
-sshKey: |
-  ssh-ed25519 AAAA...yourkey... user@host
+  none: {}
+pullSecret: '{"auths":{"fake":{"auth":"Zm9vOmJhcgo="}}}'
