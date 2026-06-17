@@ -3,13 +3,8 @@ kind: AgentConfig
 metadata:
   name: sno
 
-rendezvousIP: 192.168.1.100
-
 hosts:
   - hostname: sno-master-0
     role: master
     rootDeviceHints:
-      deviceName: /dev/vda      # virtio disk; or /dev/sda for SATA emulation
-    interfaces:
-      - name: eth0              # or ens3/enp1s0 depending on VM driver
-        macAddress: "00:50:56:20:1D:F0"
+      deviceName: /dev/sda
