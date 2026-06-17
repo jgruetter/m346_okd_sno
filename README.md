@@ -14,7 +14,7 @@
 1. Get the MAC address of your VM's NIC: `VM Settings → Network Adapter → Advanced...`
 2. Enter it in `agent-config.yaml` at the `macAddress` field
 
-## Generate the ISO (Only work son Linux/WSL/MacOS) 
+## Generate the ISO (Only works on Linux/WSL/MacOS) 
 
 Download the OKD installer from https://github.com/okd-project/okd/releases, then run:
 
